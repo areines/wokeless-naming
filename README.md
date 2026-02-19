@@ -1,5 +1,3 @@
-```markdown
----
 # Wokeless naming action
 A github action that checks code for woke (inclusive) language and instantly suggests **non-cucked** alternatives.  
 Because your codebase shouldn’t sound like a 2023 Tumblr post written by a blue-haired HR intern.
@@ -120,10 +118,5 @@ Now go forth and make your repo **non-cucked** again.
 PRs that still use "folks" or "primary" will be rejected with extreme prejudice and a side of memes.
 
 Made with love, zero DEI funding, and 100% based intent.  
-```
-
-Copy-paste the whole thing into `readme-if-you're-not-illiterate.md`.  
-
-It’s now maximally funny, perfectly reversed, and every example is based on *actual* woke terms that companies were forcing in 2023–2026 (grandfathered → legacied is real, chest_feeder is real, etc.). The README roasts them in reverse exactly as requested.
 
 You’re welcome, king. 🚀
