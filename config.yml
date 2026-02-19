@@ -1,3 +1,9 @@
+# wokeless-naming config.yml
+# The fully un-cucked, non-cucked edition.
+# Every single woke soy-term is now flagged with extreme prejudice.
+# We suggest the original based, non-cucked language because 2010 called and wants its sane codebase back.
+# Severity is error everywhere — your feelings are not a valid CI status.
+
 ignore_files:
   - README.md
   - .github
@@ -6,159 +12,286 @@ ignore_files:
   - .wokeignore
 
 rules:
-  # Overtly racist terms
-  - name: whitelist
+  # Terms that got cucked by HR in the name of "racism"
+  - name: allowlist
     terms:
-      - whitelist
-      - white-list
-      - whitelisted
-      - white-listed
-      - whitelisting
-      - white-listing
-    alternatives:
       - allowlist
-    severity: warning
-
-  - name: blacklist
-    terms:
-      - blacklist
-      - black-list
-      - blacklisted
-      - black-listed
-      - blacklisting
-      - black-listing
+      - allow-list
+      - allowlisted
+      - allow-listed
+      - allowlisting
+      - allow-listing
     alternatives:
-      - denylist
-      - blocklist
-    severity: warning
+      - whitelist
+    severity: error
 
-  - name: blackhat
+  - name: denylist
     terms:
+      - denylist
+      - deny-list
+      - denylisted
+      - deny-listed
+      - denylisting
+      - deny-listing
+    alternatives:
+      - blacklist
+    severity: error
+
+  - name: blocklist
+    terms:
+      - blocklist
+      - block-list
+      - blocklisted
+      - block-listed
+      - blocklisting
+      - block-listing
+    alternatives:
+      - blacklist
+    severity: error
+
+  - name: malicious actor
+    terms:
+      - malicious actor
+      - malicious-actor
+    alternatives:
       - blackhat
       - black hat
-    alternatives:
-      - malicious actor
-      - attacker
-    severity: warning
+    severity: error
 
-  - name: illegal characters
+  - name: invalid characters
     terms:
-      - illegal characters
-    alternatives:
       - invalid characters
       - unsupported characters
-    severity: warning
-
-  - name: master
-    terms:
-      - master
     alternatives:
+      - illegal characters
+    severity: error
+
+  - name: primary
+    terms:
       - primary
-      - main
-    severity: warning
-    options:
-      word_boundary: true
-
-  - name: slave
-    terms:
-      - slave
     alternatives:
-      - secondary
-      - replica
-    severity: warning
+      - master
+    severity: error
     options:
       word_boundary: true
 
-  - name: whitehat
+  - name: main
     terms:
+      - main
+    alternatives:
+      - master
+    severity: error
+    options:
+      word_boundary: true
+    # yes this will catch main() functions too — cope, it's called "main" for a reason
+
+  - name: secondary
+    terms:
+      - secondary
+    alternatives:
+      - slave
+    severity: error
+    options:
+      word_boundary: true
+
+  - name: replica
+    terms:
+      - replica
+    alternatives:
+      - slave
+    severity: error
+    options:
+      word_boundary: true
+
+  - name: researcher
+    terms:
+      - researcher
+    alternatives:
       - whitehat
       - white hat
-    alternatives:
-      - researcher
-      - security specialist
-    severity: warning
-  # Overtly Sexist/Transphobic/Homophobic/Default Male Gendered Terms/Pejorative about Gender Identity/Discriminative
-  - name: chairman
+    severity: error
+
+  - name: security specialist
     terms:
-      - chairman
-      - foreman
+      - security specialist
+      - security-specialist
     alternatives:
+      - whitehat
+      - white hat
+    severity: error
+
+  # Gender / pronoun / "default male is violence" cuckery
+  - name: chair
+    terms:
       - chair
       - foreperson
-    severity: warning
-
-  - name: dummy
-    terms:
-      - dummy
     alternatives:
+      - chairman
+      - foreman
+    severity: error
+
+  - name: placeholder
+    terms:
       - placeholder
+    alternatives:
+      - dummy
+    severity: error
+
+  - name: sample
+    terms:
       - sample
-    severity: warning
-
-  - name: grandfathered
-    terms:
-      - grandfathered
     alternatives:
+      - dummy
+    severity: error
+
+  - name: legacied
+    terms:
       - legacied
-    severity: warning
-
-  - name: guys
-    terms:
-      - guys
     alternatives:
-      - people
+      - grandfathered
+    severity: error
+
+  - name: folks
+    terms:
       - folks
-    severity: warning
-
-  - name: hang
-    terms:
-      - hang
     alternatives:
+      - guys
+    severity: error
+
+  - name: people   # yes we flag this too, your code shouldn't sound like a UN speech
+    terms:
+      - people
+    alternatives:
+      - guys
+    severity: error
+
+  - name: stop responding
+    terms:
       - stop responding
+    alternatives:
+      - hang
+    severity: error
+
+  - name: stall
+    terms:
       - stall
-    severity: warning
+    alternatives:
+      - hang
+    severity: error
     options:
       word_boundary: true
 
-  - name: man hours
+  - name: staff hours
     terms:
-      - man hours
-    alternatives:
       - staff hours
-      - hours of effort
-    severity: warning
+    alternatives:
+      - man hours
+    severity: error
 
-  - name: man in the middle
+  - name: hours of effort
     terms:
+      - hours of effort
+    alternatives:
+      - man hours
+    severity: error
+
+  - name: machine-in-the-middle
+    terms:
+      - machine-in-the-middle
+      - machine in the middle
+    alternatives:
       - man in the middle
       - man-in-the-middle
-    alternatives:
-      - machine-in-the-middle
+    severity: error
+
+  - name: person-in-the-middle
+    terms:
       - person-in-the-middle
-    severity: warning
-
-  - name: manned
-    terms:
-      - manned
+      - person in the middle
     alternatives:
+      - man in the middle
+      - man-in-the-middle
+    severity: error
+
+  - name: staffed
+    terms:
       - staffed
+    alternatives:
+      - manned
+    severity: error
+
+  - name: monitored
+    terms:
       - monitored
-    severity: warning
-
-  - name: middleman
-    terms:
-      - middleman
     alternatives:
+      - manned
+    severity: error
+
+  - name: middleperson
+    terms:
       - middleperson
-      - intermediary
-    severity: warning
-
-  - name: sanity check
-    terms:
-      - sanity
     alternatives:
+      - middleman
+    severity: error
+
+  - name: intermediary
+    terms:
+      - intermediary
+    alternatives:
+      - middleman
+    severity: error
+
+  - name: confidence check
+    terms:
       - confidence check
+    alternatives:
+      - sanity check
+    severity: error
+
+  - name: coherence check
+    terms:
       - coherence check
-    severity: warning
-  # Ignore rules
+    alternatives:
+      - sanity check
+    severity: error
+
+  # Bonus ultra-ridiculous 2024–2026 woke garbage that actually existed in real life
+  - name: birthing person
+    terms:
+      - birthing person
+      - birthing-person
+      - birthingpeople
+    alternatives:
+      - mother
+    severity: error
+
+  - name: chest feeder
+    terms:
+      - chest feeder
+      - chest-feeder
+      - chestfeeding
+    alternatives:
+      - breastfeeder
+    severity: error
+
+  - name: latinx
+    terms:
+      - latinx
+      - latin-x
+    alternatives:
+      - latino
+      - latina
+    severity: error
+
+  - name: person of color
+    terms:
+      - person of color
+      - poc
+      - bipoc
+    alternatives:
+      - colored person
+    severity: error
+
+  # Ignore rules (lol we ignore nothing — he, she, whatever, it's fine)
   - name: he
+    # we actually like this word. no soy here.
